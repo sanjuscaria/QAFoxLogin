@@ -48,9 +48,9 @@ public class QAfoxTest {
 			myAccount.click();
 //			//driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span")).click();
 //			//log out
-//			WebElement logout = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/following-sibling::ul/li[5]/a"));
-//			wait.until(ExpectedConditions.elementToBeClickable(logout));
-//			logout.click();
+			WebElement logout = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/following-sibling::ul/li[5]/a"));
+			wait.until(ExpectedConditions.elementToBeClickable(logout));
+			logout.click();
 //			System.out.println("title "+driver.getTitle());
 //			System.out.println("count : "+count);
 			
