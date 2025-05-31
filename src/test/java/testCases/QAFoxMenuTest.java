@@ -33,10 +33,11 @@ public class QAFoxMenuTest {
 				driver = new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 				driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
-				driver.manage().window().setSize(new Dimension(1920, 1080));
+				//driver.manage().window().setSize(new Dimension(1920, 1080));
+				driver.manage().window().maximize();
 				System.out.println("Screen shot is taken : ");
 				ScreenshotUtil.takeScreenshot(driver, "clickError");
-				//driver.manage().window().maximize();				
+								
 				
 				driver.quit();
 			} catch (Exception e) {
