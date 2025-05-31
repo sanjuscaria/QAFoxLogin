@@ -51,11 +51,10 @@ public class QAfoxTest {
 				new WebDriverWait(driver, Duration.ofSeconds(10)).until(
 					    webDriver -> ((JavascriptExecutor) webDriver)
 					        .executeScript("return document.readyState").equals("complete"));
-				WebElement element = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
+				WebElement element = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span[2]"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 				ScreenshotUtil.takeScreenshot(driver, "afterScroll");
-	//			WebElement myAccount = driver
-	//					.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
+				element = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span[2]"));
 				wait.until(ExpectedConditions.elementToBeClickable(element));
 				element.click();
 //			//driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span")).click();
