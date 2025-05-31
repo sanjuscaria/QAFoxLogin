@@ -20,7 +20,7 @@ public class QAfoxTest {
 	@Test
 	public void setup()
 	{
-		
+		//This is a comment added from Github
 		System.out.println("start : "+ TimestampUtil.getCurrentTimestamp());
 		for (int i = 0; i < 20; i++) {
 			count++;
