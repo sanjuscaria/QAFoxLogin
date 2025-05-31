@@ -22,7 +22,7 @@ public class QAfoxTest {
 	{
 		//This is a comment added from Github
 		System.out.println("start : "+ TimestampUtil.getCurrentTimestamp());
-		for (int i = 0; i < 20; i++) {
+		//for (int i = 0; i < 20; i++) {
 			count++;
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
@@ -30,7 +30,7 @@ public class QAfoxTest {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
 			driver.manage().window().maximize();
-//			driver.findElement(By.id("input-email")).sendKeys("fname1.lname1@gmail.com");
+			driver.findElement(By.id("input-email")).sendKeys("fname1.lname1@gmail.com");
 //			driver.findElement(By.id("input-password")).sendKeys("pass");
 //			driver.findElement(By.xpath("//input[@value='Login']")).click();
 //			//Assert.assertEquals(driver.getTitle(), "My Account");
@@ -50,7 +50,7 @@ public class QAfoxTest {
 //			System.out.println("count : "+count);
 			
 			driver.quit();
-		}
+		//}
 		
 		System.out.println("end : "+ TimestampUtil.getCurrentTimestamp());
 		
