@@ -26,7 +26,7 @@ public class QAfoxTest {
 			count++;
 			ChromeOptions options = new ChromeOptions();
 			//options.addArguments("--headless");
-			//options.addArguments("window-size=1920,1080");
+			options.addArguments("window-size=1920,1080");
 			driver = new ChromeDriver(options);
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
