@@ -30,7 +30,7 @@ public class QAfoxTest {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
 			driver.manage().window().maximize();
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 			driver.findElement(By.id("input-email")).sendKeys("fname1.lname1@gmail.com");
 			driver.findElement(By.id("input-password")).sendKeys("pass");
 			
