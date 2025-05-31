@@ -27,8 +27,11 @@ public class QAfoxTest {
 			try {
 				count++;
 				ChromeOptions options = new ChromeOptions();
-				//options.addArguments("--headless");
+				options.addArguments("--headless=new"); // Use --headless=new for Chrome 109+
 				options.addArguments("window-size=1920,1080");
+				options.addArguments("--disable-gpu");
+				options.addArguments("--no-sandbox");
+				options.addArguments("--disable-dev-shm-usage");
 				driver = new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 				driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
@@ -45,8 +48,12 @@ public class QAfoxTest {
 //			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //				wait.until(ExpectedConditions.titleContains("My Account"));
 				//My Account
+				new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+					    webDriver -> ((JavascriptExecutor) webDriver)
+					        .executeScript("return document.readyState").equals("complete"));
 				WebElement element = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+				ScreenshotUtil.takeScreenshot(driver, "afterScroll");
 	//			WebElement myAccount = driver
 	//					.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
 				wait.until(ExpectedConditions.elementToBeClickable(element));
