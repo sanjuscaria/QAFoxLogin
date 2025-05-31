@@ -30,9 +30,13 @@ public class QAfoxTest {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
 			driver.manage().window().maximize();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			driver.findElement(By.id("input-email")).sendKeys("fname1.lname1@gmail.com");
-//			driver.findElement(By.id("input-password")).sendKeys("pass");
-//			driver.findElement(By.xpath("//input[@value='Login']")).click();
+			driver.findElement(By.id("input-password")).sendKeys("pass");
+			
+			WebElement loginBtn = driver.findElement(By.xpath("//input[@value='Login']"));
+			wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+			loginBtn.click();
 //			//Assert.assertEquals(driver.getTitle(), "My Account");
 //			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //			wait.until(ExpectedConditions.titleContains("My Account"));
