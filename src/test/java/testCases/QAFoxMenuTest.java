@@ -36,6 +36,9 @@ public class QAFoxMenuTest {
 				//driver.manage().window().setSize(new Dimension(1920, 1080));
 				driver.manage().window().maximize();
 				System.out.println("Screen shot is taken : ");
+				new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+					    webDriver -> ((JavascriptExecutor) webDriver)
+					        .executeScript("return document.readyState").equals("complete"));
 				ScreenshotUtil.takeScreenshot(driver, "clickError");
 								
 				
