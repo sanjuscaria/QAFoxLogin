@@ -39,10 +39,13 @@ public class QAfoxTest {
 			//My Account
 			WebElement myAccount = driver
 					.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
+			wait.until(ExpectedConditions.elementToBeClickable(myAccount));
 			myAccount.click();
 			//driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span")).click();
 			//log out
-			driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/following-sibling::ul/li[5]/a")).click();
+			WebElement logout = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/following-sibling::ul/li[5]/a"));
+			wait.until(ExpectedConditions.elementToBeClickable(logout));
+			logout.click();
 			System.out.println("title "+driver.getTitle());
 			System.out.println("count : "+count);
 			
