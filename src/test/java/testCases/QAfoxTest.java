@@ -22,7 +22,7 @@ public class QAfoxTest {
 	{
 		//This is a comment added from Github
 		System.out.println("start : "+ TimestampUtil.getCurrentTimestamp());
-		//for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 20; i++) {
 			count++;
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
@@ -55,7 +55,7 @@ public class QAfoxTest {
 //			System.out.println("count : "+count);
 			
 			driver.quit();
-		//}
+		}
 		
 		System.out.println("end : "+ TimestampUtil.getCurrentTimestamp());
 		
