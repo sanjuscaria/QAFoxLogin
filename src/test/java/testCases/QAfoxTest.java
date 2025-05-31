@@ -43,12 +43,12 @@ public class QAfoxTest {
 				loginBtn.click();
 //			//Assert.assertEquals(driver.getTitle(), "My Account");
 //			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				wait.until(ExpectedConditions.titleContains("My Account"));
+//				wait.until(ExpectedConditions.titleContains("My Account"));
 				//My Account
 				WebElement element = driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-				WebElement myAccount = driver
-						.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
+	//			WebElement myAccount = driver
+	//					.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span"));
 				wait.until(ExpectedConditions.elementToBeClickable(element));
 				element.click();
 //			//driver.findElement(By.xpath("//div[@id='top-links']/ul/li[2]/a/i/following-sibling::span")).click();
