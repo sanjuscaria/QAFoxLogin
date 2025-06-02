@@ -17,15 +17,15 @@ public class QAFoxMenuTest {
 	int count = 0;
 	
 	@Test
-	public void setup()
+	public void setup() throws InterruptedException
 	{
 		//This is a comment added from Github
 		System.out.println("starting Execution : "+ TimestampUtil.getCurrentTimestamp());
-		//for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 3; i++) {
 			try {
 				count++;
 				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--headless=new"); // Use --headless=new for Chrome 109+
+				//options.addArguments("--headless=new"); // Use --headless=new for Chrome 109+
 				options.addArguments("window-size=1920,1080");
 				options.addArguments("--disable-gpu");
 				options.addArguments("--no-sandbox");
@@ -40,8 +40,7 @@ public class QAFoxMenuTest {
 					    webDriver -> ((JavascriptExecutor) webDriver)
 					        .executeScript("return document.readyState").equals("complete"));
 				ScreenshotUtil.takeScreenshot(driver, "clickError");
-				//again changing		
-				
+
 				driver.quit();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -49,7 +48,7 @@ public class QAFoxMenuTest {
 			    throw e;
 				//e.printStackTrace();
 			}
-		//}
+		}
 		
 		System.out.println("Ending Execution : "+ TimestampUtil.getCurrentTimestamp());
 		
