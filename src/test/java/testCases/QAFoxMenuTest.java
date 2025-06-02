@@ -40,7 +40,7 @@ public class QAFoxMenuTest {
 					    webDriver -> ((JavascriptExecutor) webDriver)
 					        .executeScript("return document.readyState").equals("complete"));
 				ScreenshotUtil.takeScreenshot(driver, "clickError");
-								
+				//testing				
 				
 				driver.quit();
 			} catch (Exception e) {
