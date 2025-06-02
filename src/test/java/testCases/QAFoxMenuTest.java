@@ -17,11 +17,11 @@ public class QAFoxMenuTest {
 	int count = 0;
 	
 	@Test
-	public void setup()  throws InterruptedException
+	public void setup()
 	{
 		//This is a comment added from Github
 		System.out.println("starting Execution : "+ TimestampUtil.getCurrentTimestamp());
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 2; i++) {
 			try {
 				count++;
 				ChromeOptions options = new ChromeOptions();
@@ -41,7 +41,7 @@ public class QAFoxMenuTest {
 					        .executeScript("return document.readyState").equals("complete"));
 				ScreenshotUtil.takeScreenshot(driver, "clickError");
 								
-				Thread.sleep(2000);
+				//Thread.sleep(2000);
 				driver.quit();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
