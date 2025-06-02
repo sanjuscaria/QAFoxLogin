@@ -17,7 +17,7 @@ public class QAFoxMenuTest {
 	int count = 0;
 	
 	@Test
-	public void setup throws InterruptedException ()
+	public void setup()  throws InterruptedException
 	{
 		//This is a comment added from Github
 		System.out.println("starting Execution : "+ TimestampUtil.getCurrentTimestamp());
